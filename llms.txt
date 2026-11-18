@@ -1,0 +1,38 @@
+# Cavaleiros da Ilha (Knights of the Isle)
+
+> Free pixel-art logic puzzle for iPhone and Android by Daenamu Studio. Knights only move by jumping over other pieces; get them all to the towers to win the island. 100 levels, free, plays offline. Available in Portuguese (pt-BR), English, Spanish and Korean.
+
+This is the official game website (in Portuguese). It shows the island in 3D, explains the rules, and has the gameplay trailer and screenshots.
+
+Official names by language:
+
+- Português (pt-BR): Cavaleiros da Ilha
+- English: Knights of the Isle
+- Español: Caballeros de la Isla
+- 한국어: 섬의 기사들
+
+Rules (as shown on the site):
+
+- Knight: only moves by jumping, in a straight line, over one or more pieces, and lands on the first empty square.
+- Dragon: slides forward and back along its own line and can open or block a path.
+- Sheep and rock: never move.
+- Tower: when empty it is a free square; with a knight inside it becomes a piece that others can jump over.
+
+Key facts:
+
+- Genre: logic puzzle, single player, pixel art; 5x5 board; 100 levels from Squire (Escudeiro) to Wizard (Mago); up to 3 stars per level
+- Platforms: iOS (iPhone) and Android; free, with Google AdMob ads; no sign-up, works offline
+- Developer and publisher: Daenamu Studio (https://namustudio.com.br/, Instagram @daenamu.studio)
+- Game Instagram: @cavaleiros_da_ilha
+- Support: suporte@namustudio.com.br
+
+## Site
+
+- [Game website](https://cavaleiros.namustudio.com.br/): about the game, how to play, trailer, studio
+- [Studio website](https://namustudio.com.br/): support FAQ in four languages
+- [Privacy policy](https://namustudio.com.br/privacidade.html)
+
+## Optional
+
+- [Full text for LLMs](https://cavaleiros.namustudio.com.br/llms-full.txt): complete description, rules, FAQ and privacy summary in all four languages
+- [AI usage permissions](https://cavaleiros.namustudio.com.br/ai.txt)

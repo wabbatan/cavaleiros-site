@@ -1,0 +1,122 @@
+/* Base comum do site do Cavaleiros da Ilha.
+   Fontes do próprio jogo: Germania One (títulos) e Fredoka (texto).
+   Cores tiradas da arte: mar da ilha, areia do tabuleiro, pergaminho do "Como jogar",
+   fita azul do logo, ouro do capacete e vermelho do dragão. */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Germania+One&display=swap');
+
+:root {
+  --mar: #3f949e;
+  --mar-claro: #6fc0b9;
+  --mar-escuro: #1f5b66;
+  --espuma: #d9f3ee;
+  --areia: #f1d4a7;
+  --pergaminho: #fbefd3;
+  --pergaminho-sombra: #e7cf9f;
+  --madeira: #7a4a26;
+  --madeira-clara: #a86b3c;
+  --fita: #3f6fb5;
+  --fita-escura: #2c4f86;
+  --tinta: #22304a;
+  --tinta-suave: #4b5873;
+  --ouro: #f2b630;
+  --ouro-escuro: #b97e12;
+  --dragao: #d4473b;
+  --grama: #5aa84a;
+  --branco: #fffaf0;
+
+  --fonte-titulo: 'Germania One', Georgia, serif;
+  --fonte-texto: 'Fredoka', 'Segoe UI', system-ui, sans-serif;
+  --px: 4px; /* tamanho do "pixel" das bordas */
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--mar);
+  color: var(--tinta);
+  font: 400 18px/1.55 var(--fonte-texto);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--fita); }
+:focus-visible { outline: 3px solid var(--ouro); outline-offset: 3px; }
+
+h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: 400; line-height: 1.05; margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(40px, 4.4vw, 64px); }
+h3 { font-size: 28px; }
+p { margin: 0; max-width: 62ch; }
+
+/* Pergaminho com cantos em degrau de pixel, como as janelas do jogo */
+.pergaminho {
+  --c: calc(var(--px) * 2);
+  background: var(--pergaminho);
+  color: var(--tinta);
+  padding: 36px 40px;
+  clip-path: polygon(
+    0 var(--c), var(--px) var(--c), var(--px) var(--px), var(--c) var(--px), var(--c) 0,
+    calc(100% - var(--c)) 0, calc(100% - var(--c)) var(--px), calc(100% - var(--px)) var(--px), calc(100% - var(--px)) var(--c), 100% var(--c),
+    100% calc(100% - var(--c)), calc(100% - var(--px)) calc(100% - var(--c)), calc(100% - var(--px)) calc(100% - var(--px)), calc(100% - var(--c)) calc(100% - var(--px)), calc(100% - var(--c)) 100%,
+    var(--c) 100%, var(--c) calc(100% - var(--px)), var(--px) calc(100% - var(--px)), var(--px) calc(100% - var(--c)), 0 calc(100% - var(--c))
+  );
+  box-shadow: inset 0 calc(var(--px) * -2) 0 var(--pergaminho-sombra);
+}
+
+/* Botões das lojas */
+.lojas { display: flex; flex-wrap: wrap; gap: 14px; }
+.botao-loja {
+  position: relative;
+  display: inline-flex; align-items: center; gap: 12px;
+  min-width: 210px;
+  padding: 12px 20px 14px 16px;
+  background: var(--tinta);
+  color: var(--branco);
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 6px 0 #10182a;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.botao-loja svg { width: 30px; height: 30px; flex: none; image-rendering: pixelated; }
+.loja-texto { display: flex; flex-direction: column; line-height: 1.1; }
+.loja-texto small { font-size: 13px; opacity: .8; }
+.loja-texto b { font-size: 22px; font-weight: 600; }
+a.botao-loja:hover { transform: translateY(-2px); box-shadow: 0 8px 0 #10182a; }
+a.botao-loja:active { transform: translateY(4px); box-shadow: 0 2px 0 #10182a; }
+.botao-loja.em-breve { cursor: default; }
+.selo-em-breve {
+  position: absolute; top: -12px; right: -10px;
+  background: var(--ouro); color: var(--tinta);
+  font: 600 13px/1 var(--fonte-texto);
+  padding: 6px 9px 5px;
+  border-radius: 6px;
+  box-shadow: 0 3px 0 var(--ouro-escuro);
+  transform: rotate(4deg);
+}
+
+/* Botão secundário (Instagram etc.) */
+.botao-claro {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 18px 12px;
+  background: var(--branco); color: var(--tinta);
+  font-weight: 600; text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 0 var(--pergaminho-sombra);
+}
+.botao-claro:hover { transform: translateY(-2px); }
+
+/* Rodapé */
+.rodape {
+  background: var(--tinta);
+  color: var(--espuma);
+  padding: 48px 40px 40px;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px;
+  font-size: 16px;
+}
+.rodape a { color: var(--branco); }
+.rodape-linhas { display: flex; flex-wrap: wrap; gap: 8px 32px; }
+.rodape-assinatura { opacity: .8; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0s !important; animation-duration: 0s !important; }
+}

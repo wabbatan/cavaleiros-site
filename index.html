@@ -3,27 +3,226 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cavaleiros da Ilha · em breve</title>
-<meta name="description" content="Cavaleiros da Ilha: um quebra-cabeça de lógica em pixel art. 100 fases, grátis para Android e iOS. Em breve.">
-<style>
-  :root { --mar:#2b8f9a; --mar2:#1f6f7a; --areia:#f3e3c0; --texto:#fffaf0; }
-  * { box-sizing:border-box; }
-  body { margin:0; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
-         background: radial-gradient(ellipse at 50% 35%, var(--mar) 0%, var(--mar2) 75%); color:var(--texto);
-         font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; text-align:center; padding:24px 16px; }
-  img { width:min(560px, 90vw); height:auto; filter: drop-shadow(0 10px 18px rgba(0,0,0,.25)); }
-  h1 { font-size:clamp(1.3rem, 4vw, 2rem); margin:28px 0 8px; }
-  p { margin:6px 0; font-size:clamp(1rem, 2.8vw, 1.15rem); opacity:.95; }
-  a { color:var(--areia); }
-  footer { margin-top:48px; font-size:.9rem; opacity:.85; }
-</style>
+<title>Cavaleiros da Ilha · quebra-cabeça de lógica em pixel art</title>
+<meta name="description" content="Um quebra-cabeça de lógica numa ilha de cavaleiros, dragões e ovelhas. 100 fases, grátis, joga sem internet.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://cavaleiros.namustudio.com.br/">
+<link rel="alternate" type="text/plain" href="https://cavaleiros.namustudio.com.br/llms.txt" title="LLMs">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="assets/icone_64.png" sizes="64x64">
+<link rel="apple-touch-icon" href="assets/icone_180.png">
+<meta name="theme-color" content="#3f949e">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cavaleiros da Ilha">
+<meta property="og:title" content="Cavaleiros da Ilha · quebra-cabeça de lógica em pixel art">
+<meta property="og:description" content="Um quebra-cabeça de lógica numa ilha de cavaleiros, dragões e ovelhas. 100 fases. Grátis. Joga sem internet.">
+<meta property="og:url" content="https://cavaleiros.namustudio.com.br/">
+<meta property="og:image" content="https://cavaleiros.namustudio.com.br/assets/compartilhar.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A ilha do jogo vista de cima, com o logo Cavaleiros da Ilha">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://namustudio.com.br/#studio",
+      "name": "Daenamu Studio",
+      "url": "https://namustudio.com.br/",
+      "logo": "https://cavaleiros.namustudio.com.br/assets/daenamu.webp",
+      "email": "suporte@namustudio.com.br",
+      "sameAs": [
+        "https://www.instagram.com/daenamu.studio/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://cavaleiros.namustudio.com.br/#site",
+      "url": "https://cavaleiros.namustudio.com.br/",
+      "name": "Cavaleiros da Ilha",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "https://namustudio.com.br/#studio"
+      }
+    },
+    {
+      "@type": [
+        "VideoGame",
+        "MobileApplication"
+      ],
+      "@id": "https://cavaleiros.namustudio.com.br/#jogo",
+      "name": "Cavaleiros da Ilha",
+      "alternateName": [
+        "Knights of the Isle",
+        "Caballeros de la Isla",
+        "섬의 기사들"
+      ],
+      "url": "https://cavaleiros.namustudio.com.br/",
+      "image": "https://cavaleiros.namustudio.com.br/assets/compartilhar.jpg",
+      "description": "Um quebra-cabeça de lógica em pixel art numa ilha de cavaleiros, dragões e ovelhas. O cavaleiro só anda pulando por cima das outras peças; leve todos até as torres. 100 fases, grátis, joga sem internet.",
+      "disambiguatingDescription": "A free pixel-art logic puzzle for iPhone and Android. Knights only move by jumping over other pieces; get them all to the towers.",
+      "genre": [
+        "Puzzle",
+        "Logic puzzle"
+      ],
+      "applicationCategory": "GameApplication",
+      "applicationSubCategory": "Puzzle",
+      "operatingSystem": "iOS, Android",
+      "gamePlatform": [
+        "iOS",
+        "Android"
+      ],
+      "playMode": "SinglePlayer",
+      "inLanguage": [
+        "pt-BR",
+        "en",
+        "es",
+        "ko"
+      ],
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL"
+      },
+      "author": {
+        "@id": "https://namustudio.com.br/#studio"
+      },
+      "publisher": {
+        "@id": "https://namustudio.com.br/#studio"
+      },
+      "sameAs": [
+        "https://www.instagram.com/cavaleiros_da_ilha/"
+      ],
+      "copyrightYear": 2026,
+      "copyrightHolder": {
+        "@id": "https://namustudio.com.br/#studio"
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="comum.css">
+<link rel="stylesheet" href="estilo.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/"
+  }
+}
+</script>
 </head>
 <body>
-  <img src="logo.png" alt="Cavaleiros da Ilha">
-  <h1>Em breve</h1>
-  <p>Um quebra-cabeça de lógica numa ilha de cavaleiros, dragões e ovelhas.</p>
-  <p>100 fases · grátis para Android e iOS · jogue offline</p>
-  <p><a href="https://www.instagram.com/cavaleiros_da_ilha/">@cavaleiros_da_ilha</a></p>
-  <footer>Um jogo da <a href="https://namustudio.com.br">Daenamu Studio</a></footer>
+<canvas id="cena" aria-hidden="true"></canvas>
+<div class="carregando" id="carregando"><img src="assets/sprites/cavaleiro_azul_pulando.webp" alt=""><span>Chegando na ilha…</span></div>
+
+<nav class="topo" aria-label="Seções">
+  <a href="#inicio" class="topo-logo"><img src="assets/logo.webp" alt="Cavaleiros da Ilha"></a>
+  <div class="topo-links">
+    <a href="#sobre">O jogo</a>
+    <a href="#como-jogar">Como jogar</a>
+    <a href="#trailer">Trailer</a>
+    <a href="#estudio">Estúdio</a>
+    <button type="button" class="botao-som" data-som aria-pressed="false">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M1 6h3v4H1zM4 5h1v6H4zM5 4h1v8H5zM6 3h1v10H6z"/><path class="ondas" fill="currentColor" d="M9 6h1v4H9zM11 4h1v2h-1zM11 10h1v2h-1zM12 6h1v4h-1zM13 3h1v2h-1zM13 11h1v2h-1zM14 5h1v6h-1z"/><path class="mudo" fill="currentColor" d="M9 5h1v1H9zM10 6h1v1h-1zM11 7h1v2h-1zM12 6h1v1h-1zM13 5h1v1h-1zM10 9h1v1h-1zM9 10h1v1H9zM12 9h1v1h-1zM13 10h1v1h-1z"/></svg>
+      <span>Ligar som</span>
+    </button>
+    <a href="#baixar" class="topo-baixar">Baixe agora</a>
+  </div>
+</nav>
+
+<main>
+  <section id="inicio" class="secao heroi" data-camera="0">
+    <div class="heroi-conteudo">
+      <h1><img src="assets/logo.webp" alt="Cavaleiros da Ilha" class="heroi-logo"></h1>
+      <p class="heroi-frase">Um quebra-cabeça de lógica numa ilha de cavaleiros, dragões e ovelhas.</p>
+      <p class="heroi-linha">100 fases. Grátis. Joga sem internet.</p>
+      <div class="heroi-baixar">
+        <p class="rotulo-baixar">Baixe agora</p>
+        <div data-lojas></div>
+        <a class="botao-claro" href="#" data-instagram target="_blank" rel="noopener">Siga no Instagram</a>
+      </div>
+    </div>
+    <p class="dica-rolar" aria-hidden="true">Role para descer até a ilha</p>
+  </section>
+
+  <section id="sobre" class="secao" data-camera="1">
+    <div class="painel pergaminho lado-esq">
+      <h2>Leve todos os cavaleiros até as torres</h2>
+      <p>Cavaleiros da Ilha é um quebra-cabeça de lógica com regras simples e desafios cada vez mais espertos. Numa ilha em pixel art, cavaleiros, dragões e ovelhas dividem um tabuleiro 5x5. Sua missão: colocar cada cavaleiro dentro de uma torre.</p>
+      <ul class="destaques">
+        <li><img src="assets/sprites/torre_conquistada.webp" alt="">100 fases, do Escudeiro ao Mago</li>
+        <li><img src="assets/sprites/cavaleiro_amarelo_comemorando.webp" alt="">Até 3 estrelas por fase: resolva com o menor número de saltos</li>
+        <li><img src="assets/sprites/ovelha_parada.webp" alt="">Travou? O botão de solução mostra o caminho, passo a passo</li>
+        <li><img src="assets/sprites/barco.webp" alt="">Joga sem internet e sem cadastro</li>
+        <li><img src="assets/sprites/dragao_frente.webp" alt="">Arte em pixel e trilha sonora própria</li>
+        <li><img src="assets/sprites/castelo.webp" alt="">Em português, inglês, espanhol e coreano</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="como-jogar" class="secao como-jogar" data-camera="2" data-segura="0.86">
+    <div class="painel pergaminho lado-esq fixo">
+      <h2>Aprenda em um minuto</h2>
+      <ul class="regras">
+        <li data-regra="0"><img src="assets/sprites/cavaleiro_azul_pulando.webp" alt=""><p><b>Cavaleiro:</b> só anda pulando, em linha reta, por cima de uma ou mais peças, e cai na primeira casa vazia.</p></li>
+        <li data-regra="1"><img src="assets/sprites/dragao_lado_andando_1.webp" alt=""><p><b>Dragão:</b> desliza para frente e para trás e pode abrir ou fechar o caminho.</p></li>
+        <li data-regra="2"><img src="assets/sprites/ovelha_pastando.webp" alt=""><p><b>Ovelha e pedra:</b> nunca saem do lugar.</p></li>
+        <li data-regra="3"><img src="assets/sprites/torre_vazia.webp" alt=""><p><b>Torre:</b> vazia, é casa livre. Com um cavaleiro dentro, vira peça e dá para pular por cima.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="trailer" class="secao trailer" data-camera="3">
+    <div class="trailer-grade">
+      <div class="painel pergaminho">
+        <h2>Veja o jogo em ação</h2>
+        <p>Uma fase de verdade, do primeiro salto até a última torre.</p>
+        <div class="galeria" aria-label="Telas do jogo">
+          <button data-tela="01_jogo_26"><img src="assets/telas/01_jogo_26.webp" alt="Fase 26 em andamento"></button>
+          <button data-tela="02_jogo_59"><img src="assets/telas/02_jogo_59.webp" alt="Fase 59 com dragões"></button>
+          <button data-tela="04_solucao"><img src="assets/telas/04_solucao.webp" alt="Botão de solução mostrando o caminho"></button>
+          <button data-tela="03_fases"><img src="assets/telas/03_fases.webp" alt="Mapa de fases"></button>
+          <button data-tela="07_vitoria"><img src="assets/telas/07_vitoria.webp" alt="Tela de vitória com estrelas"></button>
+          <button data-tela="08_como_jogar"><img src="assets/telas/08_como_jogar.webp" alt="Tutorial ilustrado"></button>
+        </div>
+      </div>
+      <div class="celular">
+        <video src="assets/video/previa_iphone_pt_886x1920_web.mp4" muted loop playsinline preload="metadata" poster="assets/telas/06_titulo.webp" aria-label="Gameplay do Cavaleiros da Ilha"></video>
+      </div>
+    </div>
+  </section>
+
+  <section id="estudio" class="secao estudio" data-camera="4">
+    <div class="painel pergaminho estudio-painel">
+      <img src="assets/daenamu.webp" alt="Daenamu Studio" class="estudio-logo">
+      <div>
+        <h2>Feito pela Daenamu Studio</h2>
+        <p>A Daenamu Studio é um estúdio independente brasileiro. Fazemos jogos de lógica com regras simples, para jogar em poucos minutos por dia, sozinho ou em família. Cavaleiros da Ilha é o nosso primeiro jogo.</p>
+        <p><a class="botao-claro" href="#" data-estudio>Conheça o estúdio</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="baixar" class="secao final" data-camera="5">
+    <div class="final-conteudo pergaminho">
+      <h2>A ilha está esperando</h2>
+      <p>Grátis para Android e iOS.</p>
+      <div data-lojas></div>
+    </div>
+  </section>
+</main>
+<footer id="rodape"></footer>
+
+<dialog id="tela-grande" aria-label="Tela do jogo ampliada">
+  <img alt="">
+  <button class="fechar" aria-label="Fechar">✕</button>
+</dialog>
+
+<script type="module" src="main.js"></script>
 </body>
 </html>
